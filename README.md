@@ -124,5 +124,4 @@ src/
 
 4. **Error Prevention**:
    - Empty task validation
-   - Duplicate task prevention
    - Safe local storage implementation
