@@ -1,46 +1,128 @@
-# Getting Started with Create React App
+# Task Management Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+A modern, responsive task management application built with React, TypeScript, and styled-components.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- ✨ Add, complete, and delete tasks
+- 🔍 Filter tasks by status (All, Active, Completed)
+- 💾 Persistent storage using localStorage
+- 📱 Responsive design for all devices
+- 🎨 Modern and clean UI with smooth animations
+- 🔒 Type-safe implementation with TypeScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/Abitech4IT/task-mgt-app.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd task-mgt-app
+```
 
-### `npm run eject`
+3. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The application will be available at `http://localhost:3000`
 
-## Learn More
+## Technical Implementation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### State Management
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Uses React's built-in `useState` hook for component-level state
+- Implements a custom `useLocalStorage` hook for persistent storage
+- Efficient state updates with proper React patterns
+
+### Styling
+
+- Styled-components for component-specific styling
+- Responsive design with mobile-first approach
+- Consistent color scheme and spacing
+- Smooth transitions and hover effects
+
+### Type Safety
+
+- Full TypeScript implementation
+- Strict type checking enabled
+- Type definitions for all components and hooks
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Input.tsx       # Task creation component
+│   ├── TaskList.tsx    # Task display component
+│   └── Filter.tsx      # Task filtering component
+├── hooks/              # Custom React hooks
+│   └── useLocalStorage.ts
+├── types/              # TypeScript type definitions
+├── App.tsx            # Main application component
+└── index.tsx          # Application entry point
+```
+
+## Assumptions Made
+
+1. **Task Structure**: Tasks contain:
+
+   - Unique ID (generated using crypto.randomUUID())
+   - Description (non-empty string)
+   - Completion status (boolean)
+   - Creation timestamp
+
+2. **Data Persistence**:
+
+   - Tasks are stored in localStorage
+   - Data persists across page reloads
+   - No server-side storage required
+
+3. **User Interface**:
+   - Single-page application
+   - No authentication required
+   - Mobile-first design approach
+
+## Additional Features
+
+1. **Enhanced UX**:
+
+   - Smooth transitions and animations
+   - Hover effects for interactive elements
+   - Clear visual feedback for task status
+
+2. **Task Counter**:
+
+   - Real-time count of total, active, and completed tasks
+   - Updates automatically with task changes
+
+3. **Responsive Design**:
+
+   - Works seamlessly on mobile, tablet, and desktop
+   - Optimized layout for different screen sizes
+
+4. **Error Prevention**:
+   - Empty task validation
+   - Duplicate task prevention
+   - Safe local storage implementation
